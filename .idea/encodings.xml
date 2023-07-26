@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/API-Controller-Gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/API-Controller-Gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/API-GATEWAY/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/API-GATEWAY/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PolicyFinal/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PolicyFinal/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PolicyManeger/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PolicyManeger/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PolicyService1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PolicyService1/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ServerIMSMicro/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ServerIMSMicro/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UserManager/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UserManager/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UserRolebase/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UserRolebase/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UserService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UserService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UserServiceClient/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UserServiceClient/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/adminServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/adminServer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/claimManeger/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/claimManeger/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/configureServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/configureServer/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
