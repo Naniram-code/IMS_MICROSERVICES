@@ -134,18 +134,49 @@ The above entities represent a simplified data model. Depending on the system's 
 
 
 ################################
+
+
+
+
 // create one configure package and create one class 
+
+
+
+
+
+
 import org.springframework.context.annotation.Bean;
+
+
 import org.springframework.context.annotation.Configuration;
+
+
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
+
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+
 import springfox.documentation.builders.ApiInfoBuilder;
+
+
 import springfox.documentation.builders.PathSelectors;
+
+
 import springfox.documentation.builders.RequestHandlerSelectors;
+
+
 import springfox.documentation.service.ApiInfo;
+
+
 import springfox.documentation.service.Contact;
+
+
 import springfox.documentation.spi.DocumentationType;
+
+
 import springfox.documentation.spring.web.plugins.Docket;
+
 
 @Configuration
 @EnableWebMvc
@@ -179,6 +210,9 @@ public class SwaggerConfig implements WebMvcConfigurer {
 
 
 Add in properties file 
+
+
+
 spring.mvc.pathmatch.matching-strategy = ANT_PATH_MATCHER
 
 
