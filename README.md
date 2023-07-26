@@ -173,19 +173,39 @@ public class SwaggerConfig implements WebMvcConfigurer {
 }
 
 ########################
+
+
+
+
+
 Add in properties file 
 spring.mvc.pathmatch.matching-strategy = ANT_PATH_MATCHER
 
 
 
+
+
 #########################
+
+
 http://localhost:{port}/your-context-path/swagger-ui/index.html
 //port change and copy past in your browser after spring boot running perfectly
+
+
 EG:http:
+
+
+
 // User
 #//localhost:8086/swagger-ui/index.html
+
+
+
 //Claim
 #http://localhost:8084/swagger-ui/index.html
+
+
+
 //Policy
 #http://localhost:8084/swagger-ui/index.html
 
