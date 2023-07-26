@@ -99,17 +99,33 @@ The above entities represent a simplified data model. Depending on the system's 
  
  Swagger2
 #########################################
+
+
+
        <!--springfox dependencies for api documentations in swagger -->
+
+
+
+
+       
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>3.0.0</version>
         </dependency>
+
+
+
+        
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>3.0.0</version>
         </dependency>
+
+
+
+        
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
