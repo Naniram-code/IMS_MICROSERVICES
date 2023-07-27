@@ -60,21 +60,6 @@ public class RestAppController {
 		return jwtGenVal.generateToken(authentication);
 	}
 
-	
-	/*@GetMapping("/welcomeAdmin")
-	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
-	public String welcome() {
-		return "WelcomeAdmin";
-	}
-
-	@GetMapping("/welcomeUser")
-	@PreAuthorize("hasAuthority('ROLE_USER')")
-	public String welcomeUser() {
-		return "WelcomeUSER";
-	}*/
-
-	
-	
 	public ResponseEntity<Object> generateRespose(String message, HttpStatus st, Object responseobj) {
 
 		Map<String, Object> map = new HashMap<String, Object>();

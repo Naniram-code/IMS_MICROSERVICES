@@ -22,7 +22,7 @@ public class Policy {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private int policyID;
         @NotEmpty
-        @Size(min = 6, message = "first name should Unique")
+        @Size(min = 6, message = "policy number should Unique")
         @JsonProperty("policyNumber")
         @Column(name = "policyNumber")
         private String policyNumber;
