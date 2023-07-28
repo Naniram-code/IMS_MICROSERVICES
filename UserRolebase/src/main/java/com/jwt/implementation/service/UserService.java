@@ -2,6 +2,8 @@ package com.jwt.implementation.service;
 
 import com.jwt.implementation.model.User;
 
+import java.util.List;
+
 public interface UserService {
     User readUser();
 
@@ -10,4 +12,5 @@ public interface UserService {
     void deleteUser();
 
     User getLoggedInUser();
+    List<User> getAllUsers();
 }

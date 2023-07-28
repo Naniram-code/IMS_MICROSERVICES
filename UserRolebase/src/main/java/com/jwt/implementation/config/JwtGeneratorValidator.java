@@ -33,8 +33,10 @@ public class JwtGeneratorValidator {
     @Autowired
     DefaultUserService userService;
 
-    //private final String SECRET = "26478268462346264862864665438765";
-    private final SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+    private final String SECRET = "5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437";
+    //private final SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+    // Replace "YOUR_SECRET_KEY" with your actual secret key in byte array format
+    //private final SecretKey key = Keys.hmacShaKeyFor(SECRET.getBytes());
 
 
     public Claims extractUserRole(String token) {
@@ -45,15 +47,6 @@ public class JwtGeneratorValidator {
 
         return extractClaim(token, Claims::getExpiration);
     }
-
-
-    /*public Claims extractAllClaims(String token) {
-        return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
-    }*/
-
-
-
-
     public Claims extractAllClaims(String token) {
         try {
             Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256); // Replace this with your actual key setup
@@ -96,8 +89,8 @@ public class JwtGeneratorValidator {
                 .setSubject(authentication.getName())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(5)))
-                //.signWith(SignatureAlgorithm.HS256, SECRET).compact();
-                .signWith(key).compact();
+                .signWith(SignatureAlgorithm.HS256, SECRET).compact();
+                //.signWith(key).compact();
     }
 
     public Boolean validateToken(String token, UserDetails userDetails) {

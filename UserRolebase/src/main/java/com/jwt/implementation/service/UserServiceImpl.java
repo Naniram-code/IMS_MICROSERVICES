@@ -10,6 +10,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService{
         @Autowired
@@ -22,7 +25,8 @@ public class UserServiceImpl implements UserService{
         @Override
         public User readUser() {
             int userId = getLoggedInUser().getId();
-            return userRepo.findById(userId).orElseThrow(() -> new UsernameNotFoundException("User not found for the id:"+userId));
+            return userRepo.findById(userId)
+                    .orElseThrow(() -> new UsernameNotFoundException("User not found for the id:"+userId));
         }
 
     @Override
@@ -62,7 +66,14 @@ public class UserServiceImpl implements UserService{
             return userRepo.findByUserName(userName);
         }
 
+    @Override
+    public List<User> getAllUsers() {
+
+
+        return userRepo.findAll();
     }
+
+}
 
 
 

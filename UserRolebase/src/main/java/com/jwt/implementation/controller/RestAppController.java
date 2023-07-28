@@ -1,6 +1,7 @@
 package com.jwt.implementation.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -80,11 +81,18 @@ public class RestAppController {
 	public ResponseEntity<User> updateUser(@RequestBody User user) {
 		return new ResponseEntity<User>(daoService.updateUser(user), HttpStatus.OK);
 	}
-	@PreAuthorize("hasAuthority('ROLE_USER')")
+	//@PreAuthorize("hasAuthority('ROLE_USER')")
 	@DeleteMapping("/deactivate")
 	public ResponseEntity<HttpStatus> deleteUser() {
 		daoService.deleteUser();
 		return new ResponseEntity<HttpStatus>(HttpStatus.NO_CONTENT);
+	}
+	@PreAuthorize("hasAuthority('ROLE_ADMIN','ROLE_ADMIN')")
+	@GetMapping("/getAll")
+	public ResponseEntity<List<User>> getAllClaim() {
+		List<User> claim = daoService.getAllUsers();
+		return new ResponseEntity<>(claim, HttpStatus.OK);
+
 	}
 
 }

@@ -10,8 +10,8 @@ import java.util.function.Predicate;
 public class RouteValidator {
 
     public static final List<String> openApiEndpoints = List.of(
-            "/public/registration",
-            "/public/genToken",
+            "/api/user_mght/registration",
+            "/api/user_mght/genToken",
             "/eureka"
     );
 

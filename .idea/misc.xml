@@ -13,7 +13,7 @@
         <option value="$PROJECT_DIR$/ServerIMSMicro/pom.xml" />
         <option value="$PROJECT_DIR$/UserRolebase/pom.xml" />
         <option value="$PROJECT_DIR$/PolicyService1/pom.xml" />
-        <option value="$PROJECT_DIR$/API-GATEWAY/pom.xml" />
+        <option value="$PROJECT_DIR$/API-Controller-Gateway/pom.xml" />
       </list>
     </option>
   </component>

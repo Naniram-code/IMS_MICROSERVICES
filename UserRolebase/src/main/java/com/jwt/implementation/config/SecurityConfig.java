@@ -30,6 +30,7 @@ public class SecurityConfig {
 	DefaultUserService userDetailsService;
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
+
 		return new BCryptPasswordEncoder();
 	}
 
@@ -52,7 +53,8 @@ public class SecurityConfig {
 	public SecurityFilterChain filterChain(@NotNull HttpSecurity http) throws Exception {
 		        http.cors().and().csrf().disable()
 				.authorizeRequests()
-						.antMatchers("/api/user_mght/registration","/api/user_mght/genToken" ,"/swagger-ui/**",
+						.antMatchers("/api/user_mght/registration","/api/user_mght/genToken",
+								"/api/user_mght/getAll" ,"/swagger-ui/**",
 								"/v2/api-docs", "/swagger-resources/**", "/webjars/**").permitAll()
 						//.antMatchers("/.*").permitAll()
 				.anyRequest().authenticated()
