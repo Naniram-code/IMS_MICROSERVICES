@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 
 import org.springframework.web.bind.annotation.*;
-
+/*
 
 import java.util.List;
 
@@ -57,4 +57,4 @@ public class userprofile {
             return new ResponseEntity<>(claim, HttpStatus.OK);
 
         }
-}
+}*/

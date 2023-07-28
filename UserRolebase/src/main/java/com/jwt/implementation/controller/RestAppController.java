@@ -24,8 +24,7 @@ import com.jwt.implementation.repository.UserRepository;
 import com.jwt.implementation.service.DefaultUserService;
 
 @RestController
-@RequestMapping("/public")
-//@RequestMapping("/user")
+@RequestMapping("/user/api")
 public class RestAppController {
 	@Autowired
 	private UserServiceImpl daoService;
@@ -72,30 +71,30 @@ public class RestAppController {
 		return new ResponseEntity<Object>(map, st);
 	}
 
-	/*
-	//@PreAuthorize("hasAuthority('ROLE_USER')")
+
+	@PreAuthorize("hasAuthority('ROLE_USER')")
 	@GetMapping("/profile")
 	public ResponseEntity<User> readUser() {
 
 		return new ResponseEntity<User>(daoService.readUser(), HttpStatus.OK);
 	}
-	//@PreAuthorize("hasAuthority('ROLE_USER')")
+	@PreAuthorize("hasAuthority('ROLE_USER')")
 	@PutMapping("/updateprofile")
 	public ResponseEntity<User> updateUser(@RequestBody User user) {
 		return new ResponseEntity<User>(daoService.updateUser(user), HttpStatus.OK);
 	}
-	//@PreAuthorize("hasAuthority('ROLE_USER')")
+	@PreAuthorize("hasAuthority('ROLE_USER')")
 	@DeleteMapping("/deactivate")
 	public ResponseEntity<HttpStatus> deleteUser() {
 		daoService.deleteUser();
 		return new ResponseEntity<HttpStatus>(HttpStatus.NO_CONTENT);
 	}
-	//@PreAuthorize("hasAuthority('ROLE_ADMIN','ROLE_ADMIN')")
+	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 	@GetMapping("/getAll")
 	public ResponseEntity<List<User>> getAllClaim() {
 		List<User> claim = daoService.getAllUsers();
 		return new ResponseEntity<>(claim, HttpStatus.OK);
 
-	}*/
+	}
 
 }

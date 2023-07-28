@@ -53,7 +53,7 @@ public class SecurityConfig {
 	public SecurityFilterChain filterChain(@NotNull HttpSecurity http) throws Exception {
 		        http.cors().and().csrf().disable()
 				.authorizeRequests()
-						.antMatchers("/public/registration","/public/genToken",
+						.antMatchers("/user/api/registration","/user/api/genToken",
 								"/api/user_mght/getAll" ,"/swagger-ui/**",
 								"/v2/api-docs", "/swagger-resources/**", "/webjars/**").permitAll()
 						//.antMatchers("/.*").permitAll()
