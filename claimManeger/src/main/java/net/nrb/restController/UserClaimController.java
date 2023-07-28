@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Random;
 
 @RestController
-@RequestMapping("/api/claim_mght")
+@RequestMapping("/user/api/claim_mght")
 public class UserClaimController {
     @Autowired
 
