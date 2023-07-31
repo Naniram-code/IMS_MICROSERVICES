@@ -11,7 +11,7 @@
 	<groupId>com.javatechie</groupId>
 	<artifactId>API-GATEWAY</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>swiggy-gateway</name>
+	<name>gateway</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
