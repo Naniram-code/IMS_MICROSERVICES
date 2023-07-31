@@ -5,7 +5,10 @@ import java.util.List;
 import java.util.Map;
 
 
+
 import com.jwt.implementation.service.UserServiceImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,9 +26,12 @@ import com.jwt.implementation.model.UserDTO;
 import com.jwt.implementation.repository.UserRepository;
 import com.jwt.implementation.service.DefaultUserService;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/user/api")
 public class RestAppController {
+	private static final Logger LOGGER = LogManager.getLogger(RestAppController.class);
 	@Autowired
 	private UserServiceImpl daoService;
 
@@ -43,7 +49,7 @@ public class RestAppController {
 	DefaultUserService userService;
 
 	@PostMapping("/registration")
-	public ResponseEntity<Object> registerUser(@RequestBody UserDTO userDto) {
+	public ResponseEntity<Object> registerUser(@Valid @RequestBody UserDTO userDto) {
 		User users =  userService.save(userDto);
 		if (users.equals(null))
 			return generateRespose("Not able to save user ", HttpStatus.BAD_REQUEST, userDto);
@@ -56,7 +62,9 @@ public class RestAppController {
 		
 			Authentication authentication = authManager.authenticate(
 					new UsernamePasswordAuthenticationToken(userDto.getUserName(), userDto.getPassword()));
+			//hold logged user information SecurityContextHolder
 			SecurityContextHolder.getContext().setAuthentication(authentication);
+		LOGGER.info("genToken API is called.");
 		
 		return jwtGenVal.generateToken(authentication);
 	}
@@ -70,31 +78,22 @@ public class RestAppController {
 
 		return new ResponseEntity<Object>(map, st);
 	}
-
-
-	@PreAuthorize("hasAuthority('ROLE_USER')")
 	@GetMapping("/profile")
 	public ResponseEntity<User> readUser() {
 
 		return new ResponseEntity<User>(daoService.readUser(), HttpStatus.OK);
 	}
-	@PreAuthorize("hasAuthority('ROLE_USER')")
+
 	@PutMapping("/updateprofile")
 	public ResponseEntity<User> updateUser(@RequestBody User user) {
 		return new ResponseEntity<User>(daoService.updateUser(user), HttpStatus.OK);
 	}
-	@PreAuthorize("hasAuthority('ROLE_USER')")
+
 	@DeleteMapping("/deactivate")
 	public ResponseEntity<HttpStatus> deleteUser() {
 		daoService.deleteUser();
 		return new ResponseEntity<HttpStatus>(HttpStatus.NO_CONTENT);
 	}
-	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
-	@GetMapping("/getAll")
-	public ResponseEntity<List<User>> getAllClaim() {
-		List<User> claim = daoService.getAllUsers();
-		return new ResponseEntity<>(claim, HttpStatus.OK);
 
-	}
 
 }

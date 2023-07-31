@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User updateUser(User user) {
-        User existingUser = readUser();
+        User existingUser = readUser();//get logged user
         existingUser.setUserName(user.getUserName() != null ? user.getUserName() : existingUser.getUserName());
         existingUser.setEmail(user.getEmail() != null ? user.getEmail() : existingUser.getEmail());
         existingUser.setPassword(user.getPassword() != null ? passwordEncode.encode(user.getPassword()) : existingUser.getPassword());
@@ -49,8 +49,6 @@ public class UserServiceImpl implements UserService{
 
         return userRepo.save(existingUser);
     }
-
-
     @Override
         public void deleteUser() {
             User existingUser = readUser();
@@ -59,6 +57,7 @@ public class UserServiceImpl implements UserService{
 
         @Override
         public User getLoggedInUser() {
+            //get logged user info from SecurityContextHolder
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
             String userName = authentication.getName();
@@ -68,8 +67,6 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public List<User> getAllUsers() {
-
-
         return userRepo.findAll();
     }
 

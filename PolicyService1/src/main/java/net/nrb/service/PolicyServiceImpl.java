@@ -1,8 +1,13 @@
 package net.nrb.service;
 
 import net.nrb.model.Policy;
+
+
+
 import net.nrb.repo.PolicyInfoRepo;
+
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +15,9 @@ import java.util.Optional;
 
 @Service
 public class PolicyServiceImpl implements PolicyService {
+    //@Autowired
+    //private APIClient apiClient;
+
     @Autowired
     private PolicyInfoRepo policyInfoRepo;
     @Override
@@ -27,6 +35,7 @@ public class PolicyServiceImpl implements PolicyService {
 
     @Override
     public List<Policy> getAllPolicy() {
+
         return policyInfoRepo.findAll();
     }
 
@@ -50,6 +59,11 @@ public class PolicyServiceImpl implements PolicyService {
         policyInfoRepo.deleteById(policyId);
     }
 
+
+    /*public List<User> getAllUser() {
+
+        return apiClient.getAllUser();
+    }*/
     }
 
 

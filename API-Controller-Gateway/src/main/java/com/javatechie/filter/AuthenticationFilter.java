@@ -1,9 +1,11 @@
 package com.javatechie.filter;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 import com.javatechie.util.JwtUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
@@ -14,8 +16,8 @@ import java.util.List;
 
 @Component
 public class AuthenticationFilter extends AbstractGatewayFilterFactory<Object> {
-    private static final Logger logger = LoggerFactory.getLogger(AuthenticationFilter.class);
 
+    private static final Logger LOGGER = LogManager.getLogger(AuthenticationFilter.class);
     @Autowired
     private RouteValidator validator;
 
@@ -42,6 +44,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Object> {
 
                 try {
                     //validate token
+                    LOGGER.info(" authHeader ??method is called.");
                     jwtUtil.validateToken(authHeader);
 
                   //Get role from token assuming you are storing role in claims with key 'role'
@@ -49,15 +52,22 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Object> {
 
                     // Check if request path starts with /admin/api or /user/api
                     String path = exchange.getRequest().getPath().value();
+                    LOGGER.info("role="+role+"===>get value  ??method is called.");
+
                     if(path.startsWith("/admin/api/") && !role.contains("ROLE_ADMIN")){
+                        LOGGER.info(" admin Role ??method is called.");
                         throw new RuntimeException("You don't have enough permissions to access this resource");
                     }
                     else if(path.startsWith("/user/api/") && !role.contains("ROLE_USER")){
+                        LOGGER.info(" User Role ??method is called.");
                         throw new RuntimeException("You don't have enough permissions to access this resource");
+                       // logger.info("Starting the filtering process.");
                     }
 
                 } catch (Exception e) {
                     System.out.println("invalid access...!");
+                    LOGGER.info(" invalid user ??method is called.");
+
                     throw new RuntimeException("unauthorized access to application");
                 }
             }

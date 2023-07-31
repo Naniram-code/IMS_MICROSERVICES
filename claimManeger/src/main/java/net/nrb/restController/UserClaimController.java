@@ -34,20 +34,12 @@ public class UserClaimController {
 
     // build get user by id REST API
     // http://localhost:8083/Admin/api/Claim_mght/1
-    @GetMapping("/{claimID}")
+    @GetMapping("/view/{claimID}")
     public ResponseEntity<Claim> getClaimById(@PathVariable("claimID") int  claimID){
         Claim Claim =claimService.getClaimById(claimID);
         return new ResponseEntity<>(Claim, HttpStatus.OK);
     }
 
-    // Build Get All Users REST API
-    // http://localhost:8083/Admin/api/Claim_mght/getAll
-    @GetMapping("/getAll")
-    public ResponseEntity<List<Claim>> getAllClaim() {
-        List<Claim> claim = claimService.getAllClaim();
-        return new ResponseEntity<>(claim, HttpStatus.OK);
-
-    }
     // Build Update User REST API
     @PutMapping("/update/{claimId}")
     // http://localhost:8083/Admin/api/Claim_mght/update/2

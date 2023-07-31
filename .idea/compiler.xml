@@ -7,41 +7,41 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Client (1)" />
+        <module name="Policy_service" />
+        <module name="User-service" />
+        <module name="API-GATEWAY" />
         <module name="Server" />
-        <module name="swiggy-gateway" />
-        <module name="Client (3)" />
-        <module name="JWTToken" />
+        <module name="claim-service" />
         <module name="JWTWithRole" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="client" target="11" />
+      <module name="API-GATEWAY" target="11" />
+      <module name="claim-service" target="11" />
       <module name="Client" target="11" />
-      <module name="Client (1)" target="11" />
       <module name="Client (2)" target="11" />
-      <module name="Client (3)" target="11" />
       <module name="client(2)" target="11" />
-      <module name="JWTToken" target="11" />
+      <module name="IMS_MICRO" target="11" />
       <module name="JWTWithRole" target="11" />
+      <module name="Policy_service" target="11" />
       <module name="Server" target="11" />
       <module name="service" target="11" />
-      <module name="swiggy-gateway" target="11" />
+      <module name="User-service" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="API-GATEWAY" options="-parameters" />
       <module name="Client" options="-parameters" />
-      <module name="Client (1)" options="-parameters" />
       <module name="Client (2)" options="-parameters" />
-      <module name="Client (3)" options="-parameters" />
-      <module name="JWTToken" options="-parameters" />
+      <module name="IMS_MICRO" options="-parameters" />
       <module name="JWTWithRole" options="" />
+      <module name="Policy_service" options="-parameters" />
       <module name="Server" options="-parameters" />
-      <module name="client" options="-parameters" />
+      <module name="User-service" options="-parameters" />
+      <module name="claim-service" options="-parameters" />
       <module name="client(2)" options="-parameters" />
       <module name="service" options="-parameters" />
-      <module name="swiggy-gateway" options="-parameters" />
     </option>
   </component>
 </project>

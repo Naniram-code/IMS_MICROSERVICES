@@ -49,7 +49,7 @@ public class JwtGeneratorValidator {
     }
     public Claims extractAllClaims(String token) {
         try {
-            Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256); // Replace this with your actual key setup
+            Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
             return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
         } catch (JwtException e) {
             e.printStackTrace();

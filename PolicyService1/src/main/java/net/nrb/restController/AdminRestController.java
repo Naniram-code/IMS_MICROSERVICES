@@ -1,11 +1,9 @@
 package net.nrb.restController;
 
-
-
-
 import net.nrb.model.Policy;
 import net.nrb.service.PolicyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +14,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("admin/api/policy_mght")
-public class PolicyRestController {
+public class AdminRestController {
+
+
     @Autowired
 
     private PolicyServiceImpl policyService;
@@ -63,4 +63,6 @@ public class PolicyRestController {
         policyService.deletePolicy(policyID);
         return new ResponseEntity<>("User successfully deleted!", HttpStatus.OK);
     }
+
+
 }

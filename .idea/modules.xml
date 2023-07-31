@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/claimManeger/Client (1).iml" filepath="$PROJECT_DIR$/claimManeger/Client (1).iml" />
-      <module fileurl="file://$PROJECT_DIR$/PolicyService1/Client (3).iml" filepath="$PROJECT_DIR$/PolicyService1/Client (3).iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/IMSMicro.iml" filepath="$PROJECT_DIR$/.idea/IMSMicro.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UserRolebase/JWTToken.iml" filepath="$PROJECT_DIR$/UserRolebase/JWTToken.iml" />
+      <module fileurl="file://$PROJECT_DIR$/API-Controller-Gateway/API-GATEWAY.iml" filepath="$PROJECT_DIR$/API-Controller-Gateway/API-GATEWAY.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/IMS_MICRO.iml" filepath="$PROJECT_DIR$/.idea/IMS_MICRO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PolicyService1/Policy_service.iml" filepath="$PROJECT_DIR$/PolicyService1/Policy_service.iml" />
       <module fileurl="file://$PROJECT_DIR$/ServerIMSMicro/Server.iml" filepath="$PROJECT_DIR$/ServerIMSMicro/Server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/API-Controller-Gateway/swiggy-gateway.iml" filepath="$PROJECT_DIR$/API-Controller-Gateway/swiggy-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UserRolebase/User-service.iml" filepath="$PROJECT_DIR$/UserRolebase/User-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/claimManeger/claim-service.iml" filepath="$PROJECT_DIR$/claimManeger/claim-service.iml" />
     </modules>
   </component>
 </project>
