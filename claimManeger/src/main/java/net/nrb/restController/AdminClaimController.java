@@ -17,9 +17,9 @@ public class AdminClaimController {
         // build get user by id REST API
         // http://localhost:8083/Admin/api/Claim_mght/1
         @GetMapping("/view/{claimID}")
-        public ResponseEntity<Claim> getUserClaimById(@PathVariable("ClaimID") int  ClaimID){
-            Claim Claim =claimService.getClaimById(ClaimID);
-            return new ResponseEntity<>(Claim, HttpStatus.OK);
+        public ResponseEntity<Claim> getUserClaimById(@PathVariable("claimID") int claimID){
+            Claim claim =claimService.getClaimById(claimID);
+            return new ResponseEntity<>(claim, HttpStatus.OK);
         }
 
         // Build Get All Users REST API

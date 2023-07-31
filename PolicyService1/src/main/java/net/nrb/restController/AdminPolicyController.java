@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("admin/api/policy_mght")
-public class AdminRestController {
+public class AdminPolicyController {
 
 
     @Autowired

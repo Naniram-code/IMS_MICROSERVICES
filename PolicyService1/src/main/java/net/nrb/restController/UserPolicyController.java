@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 @RestController
 @RequestMapping("user/api/policy_mght")
-public class UserRestController {
+public class UserPolicyController {
 
         @Autowired
 

@@ -61,12 +61,12 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Object> {
                     else if(path.startsWith("/user/api/") && !role.contains("ROLE_USER")){
                         LOGGER.info(" User Role ??method is called.");
                         throw new RuntimeException("You don't have enough permissions to access this resource");
-                       // logger.info("Starting the filtering process.");
+
                     }
 
                 } catch (Exception e) {
                     System.out.println("invalid access...!");
-                    LOGGER.info(" invalid user ??method is called.");
+                    LOGGER.info(" unauthorized  ??method is called.");
 
                     throw new RuntimeException("unauthorized access to application");
                 }

@@ -9,7 +9,7 @@ public class RecordNotFoundException extends Exception {
     }
 
     public RecordNotFoundException(Integer no) {
-        super("Course Does not exit");
+        super(" Does not exit");
 
     }
 

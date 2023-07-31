@@ -1,6 +1,7 @@
 package net.nrb.service;
 
 
+import net.nrb.ExceptionalHandler.ResourceNotFoundException;
 import net.nrb.model.Claim;
 import net.nrb.repo.ClaimInfoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +22,10 @@ public class ClaimServiceImpl implements ClaimService {
 
     @Override
     public Claim getClaimById(Integer ClaimID) {
-
-        Optional<Claim> optionalClaim =claimInfoRepo.findById(ClaimID);
-        return optionalClaim.get();
+        return claimInfoRepo.findById(ClaimID)
+                .orElseThrow(() -> new ResourceNotFoundException("Claim not found with id :" + ClaimID));
     }
+
 
     @Override
     public List<Claim> getAllClaim() {
