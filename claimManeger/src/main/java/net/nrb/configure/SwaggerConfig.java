@@ -29,11 +29,11 @@ public class SwaggerConfig implements WebMvcConfigurer {
 	}
 
 	private ApiInfo apiInfoMetaData() {
-		return new ApiInfoBuilder().title("INSURANCE MANAGEMENT SYSTEM")
+		return new ApiInfoBuilder().title("IMS-MICROSERVICE(CLAIM_MGHT)")
 				.description("API Endpoint Decoration")
-				.contact(new Contact("Dev-Team", "https://www.dev-team.com/", "dev-team@gmail.com"))
+				.contact(new Contact("Dev-GROUP-A", "https://www.nrb.com/", "dev-team@gmail.com"))
 				.license("Apache 2.0")
-				.licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
+				.licenseUrl("http://www.nrb.com/licenses/LICENSE-2.0.html")
 				.version("1.0.0")
 				.build();
 	}
