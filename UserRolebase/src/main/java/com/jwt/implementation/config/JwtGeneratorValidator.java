@@ -34,9 +34,7 @@ public class JwtGeneratorValidator {
     DefaultUserService userService;
 
     private final String SECRET = "5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437";
-    //private final SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
-    // Replace "YOUR_SECRET_KEY" with your actual secret key in byte array format
-    //private final SecretKey key = Keys.hmacShaKeyFor(SECRET.getBytes());
+
 
 
     public Claims extractUserRole(String token) {

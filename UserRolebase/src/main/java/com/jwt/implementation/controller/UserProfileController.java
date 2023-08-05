@@ -44,15 +44,21 @@ public class UserProfileController {
 	
 	@Autowired
 	DefaultUserService userService;
-
 	@PostMapping("/registration")
 	public ResponseEntity<Object> registerUser(@Valid @RequestBody UserDTO userDto) {
-		User users =  userService.save(userDto);
-		if (users.equals(null))
-			return generateRespose("Not able to save user ", HttpStatus.BAD_REQUEST, userDto);
-		else
-			return generateRespose("User saved successfully : " + users.getId(), HttpStatus.OK, users);
+		if (daoService.emailExists(userDto.getEmail())) {
+			return generateRespose("Email already in use", HttpStatus.BAD_REQUEST, userDto);
+		}
+
+		User users = userService.save(userDto);
+
+		if (users == null) {
+			return generateRespose("Not able to save user", HttpStatus.BAD_REQUEST, userDto);
+		} else {
+			return generateRespose("User saved successfully: " + users.getId(), HttpStatus.OK, users);
+		}
 	}
+
 
 	@GetMapping("/genToken")
 	public String generateJwtToken(@RequestBody UserDTO userDto) throws Exception {

@@ -47,16 +47,19 @@ public class DefaultUserServiceImpl implements DefaultUserService{
 
 	@Override
 	public User save(UserDTO userRegisteredDTO) {
+		User user = new User();
 		Role role = new Role();
 		if(userRegisteredDTO.getRole().equals("USER"))
 		  role = roleRepo.findByRole("ROLE_USER");
 		else if(userRegisteredDTO.getRole().equals("ADMIN"))
 		 role = roleRepo.findByRole("ROLE_ADMIN");
-		User user = new User();
+
 		user.setEmail(userRegisteredDTO.getEmail());
 		user.setUserName(userRegisteredDTO.getUserName());
 		user.setPassword(passwordEncoder.encode(userRegisteredDTO.getPassword()));
 		user.setRole(role);
+
 		return userRepo.save(user);
 	}
+
 }

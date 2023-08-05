@@ -13,4 +13,7 @@ public interface UserService {
 
     User getLoggedInUser();
     List<User> getAllUsers();
+    public boolean emailExists(String email);
+
+
 }
